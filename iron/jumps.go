@@ -16,8 +16,8 @@ func (vm *VM) LazyLoadFunction(name string) {
 }
 
 func debugJmp(vm *VM) {
-    log.Debug("Jump Table:")
-    for k, v := range vm.JumpTable {
-        log.Debug("    Function %s at pc %d", k, v)
-    }
+	log.Debug("Jump Table:")
+	for k, v := range vm.JumpTable {
+		log.Debug("    Function %s at pc %d", k, v)
+	}
 }

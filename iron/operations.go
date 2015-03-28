@@ -119,7 +119,7 @@ func (vm *VM) JmpCmp(instruction Instr, cmp int) {
 	if (vm.Cf & cmp) == cmp {
 		log.Debug("True")
 		vm.Pc = int(vm.Program.Consts[a].(FeInt))
-        return
+		return
 	}
 	log.Debug("False")
 }
@@ -167,7 +167,7 @@ func (vm *VM) Call(instruction Instr) {
 	a := instruction.Args[0]
 	name := vm.Program.Consts[a].String()
 	log.Debug("call %s", name)
-    vm.LazyLoadFunction(name)
+	vm.LazyLoadFunction(name)
 	// Store the return location in the 0th register
 	vm.Window[8] = FeInt(vm.Pc)
 	vm.Pc = vm.JumpTable[name]

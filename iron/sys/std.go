@@ -1,8 +1,8 @@
 package sys
 
 import (
+	"github.com/jkbbwr/iron/iron/types"
 	"github.com/op/go-logging"
-    "github.com/jkbbwr/iron/iron/types"
 )
 
 var log = logging.MustGetLogger("FeVM")
@@ -29,4 +29,3 @@ func (s *System) Add(name string, function func([]types.FeType)) {
 func (s System) Invoke(name string, window []types.FeType) {
 	s.Table[name](window)
 }
-

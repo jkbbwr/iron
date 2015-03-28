@@ -2,10 +2,10 @@ package iron
 
 import (
 	"bufio"
-    "os"
-    "github.com/jkbbwr/iron/iron/sys"
-    . "github.com/jkbbwr/iron/iron/parser"
-    . "github.com/jkbbwr/iron/iron/types"
+	. "github.com/jkbbwr/iron/iron/parser"
+	"github.com/jkbbwr/iron/iron/sys"
+	. "github.com/jkbbwr/iron/iron/types"
+	"os"
 )
 
 const NUM_REGISTERS int = 12000
@@ -40,7 +40,7 @@ func NewVM() *VM {
 		Locals:      locals,
 		Register:    registers,
 		Window:      registers[0:25],
-        JumpTable:   make(map[string]int),
+		JumpTable:   make(map[string]int),
 		Pc:          0,
 		Wp:          0,
 	}

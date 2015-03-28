@@ -2,8 +2,8 @@ package main
 
 import (
 	"flag"
-	"github.com/op/go-logging"
 	"github.com/jkbbwr/iron/iron"
+	"github.com/op/go-logging"
 	"os"
 	"runtime/pprof"
 )
@@ -19,8 +19,8 @@ var format = logging.MustStringFormatter(
 )
 
 func init() {
-    flag.BoolVar(&debug, "debug", false, "Enable debugging")
-    flag.BoolVar(&step, "step", false, "Enable step through")
+	flag.BoolVar(&debug, "debug", false, "Enable debugging")
+	flag.BoolVar(&step, "step", false, "Enable step through")
 	flag.BoolVar(&profile, "profile", false, "Enable write profile to file")
 	flag.BoolVar(&useLogging, "logging", false, "Enable logging")
 }
@@ -36,11 +36,11 @@ func main() {
 		logging.SetLevel(logging.ERROR, "FeVM")
 	}
 
-    script := flag.Arg(0)
-    if script == "" {
-        log.Critical("No program given.")
-        os.Exit(-1)
-    }
+	script := flag.Arg(0)
+	if script == "" {
+		log.Critical("No program given.")
+		os.Exit(-1)
+	}
 
 	if profile {
 		f, err := os.Create("./github.com.jkbbwr.iron.prof")
@@ -49,15 +49,15 @@ func main() {
 		}
 		pprof.StartCPUProfile(f)
 		defer pprof.StopCPUProfile()
-        // Profiling doesn't allow for any other settings.
-        log.Info("Starting and running FeVM 1000 times.")
-        for i := 1; i <= 1000; i++ {
-            log.Info("Starting a new FeVM")
-            vm := iron.NewVM()
-            vm.Load(script)
-            vm.Run()
-        }
-        return
+		// Profiling doesn't allow for any other settings.
+		log.Info("Starting and running FeVM 1000 times.")
+		for i := 1; i <= 1000; i++ {
+			log.Info("Starting a new FeVM")
+			vm := iron.NewVM()
+			vm.Load(script)
+			vm.Run()
+		}
+		return
 	}
 
 	log.Info("Starting FeVM")
@@ -69,14 +69,14 @@ func main() {
 	if step {
 		log.Debug("Enabling step")
 		vm.RunStep()
-        return
+		return
 	}
 
-    if debug {
-        log.Debug("Enabling debug")
-        vm.RunDebug()
-        return
-    }
+	if debug {
+		log.Debug("Enabling debug")
+		vm.RunDebug()
+		return
+	}
 
 	vm.Run()
 }

@@ -6,8 +6,8 @@ import (
 	"io"
 	"os"
 
-    "github.com/op/go-logging"
-    . "github.com/jkbbwr/iron/iron/types"
+	. "github.com/jkbbwr/iron/iron/types"
+	"github.com/op/go-logging"
 )
 
 var log = logging.MustGetLogger("FeVM")

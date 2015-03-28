@@ -4,10 +4,10 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
+	"github.com/jkbbwr/iron/iron/types"
 	"os"
 	"strconv"
 	"strings"
-    "github.com/jkbbwr/iron/iron/types"
 )
 
 const debugHelp = `
@@ -167,10 +167,10 @@ func twoStrings(frags []string) (string, string, error) {
 }
 
 func debugSys(vm *VM) {
-    log.Debug("System Table: ")
-    for k, v := range(vm.System.Table) {
-        log.Debug("    Func %s: %+#v", k, v)
-    }
+	log.Debug("System Table: ")
+	for k, v := range vm.System.Table {
+		log.Debug("    Func %s: %+#v", k, v)
+	}
 }
 
 func dumpWindow(vm *VM) {

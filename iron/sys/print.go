@@ -2,7 +2,7 @@ package sys
 
 import (
 	"fmt"
-    "github.com/jkbbwr/iron/iron/types"
+	"github.com/jkbbwr/iron/iron/types"
 )
 
 func SysPrint(window []types.FeType) {
