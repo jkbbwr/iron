@@ -1,15 +1,7 @@
 # iron
 Iron Virtual Machine
 
-
-To build you need to have the latest implementation of Go on your system.
-
-Run the command
-
-    go get github.com/jkbbwr/iron
-    go build -a github.com/jkbbwr/iron
-    
-This will produce a binary `iron` in the current working directory.
-
-
-The parser isn't on github yet. it should follow soon.
+This was my final year university project and I am keeping it for historical reasons. 
+It probably doesn't work
+Its buggy as hell
+And its very feature incomplete. But feel free to laugh at my stupidity when I was younger.
